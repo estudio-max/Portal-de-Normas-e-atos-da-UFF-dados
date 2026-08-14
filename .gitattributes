@@ -1,0 +1,10 @@
+# Estes arquivos são gerados pelo pipeline, que roda no Linux (LF). Sem esta
+# trava, publicar a partir de uma máquina Windows reescreve o arquivo INTEIRO
+# só pela troca de fim de linha — aconteceu na primeira publicação: o atos.csv
+# apareceu com 3.903 linhas alteradas sem uma vírgula de conteúdo diferente.
+*.csv text eol=lf
+
+# O portal-data.json é uma única linha de ~13 MB: tratar como binário evita
+# que o git tente calcular e exibir diff de um arquivo onde diff não ajuda
+# ninguém, e garante que nenhuma conversão de fim de linha o toque.
+*.json -text
